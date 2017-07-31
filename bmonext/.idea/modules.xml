@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/bmonext.iml" filepath="$PROJECT_DIR$/bmonext.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../fxrate/fxrate.iml" filepath="$PROJECT_DIR$/../fxrate/fxrate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../alexaLocalEnvironmentDemo/skill-sample-nodejs-highlowgame-master/skill-sample-nodejs-highlowgame-master.iml" filepath="$PROJECT_DIR$/../../alexaLocalEnvironmentDemo/skill-sample-nodejs-highlowgame-master/skill-sample-nodejs-highlowgame-master.iml" />
+    </modules>
+  </component>
+</project>
