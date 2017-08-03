@@ -5,7 +5,9 @@ module.exports.startMenuHandlers = Alexa.CreateStateHandler(states.STARTMODE, {
     'FXRateIntent': function () {
         "use strict";
         this.handler.state = states.FXMODE;
-        this.emit(':ask', 'What currency are you interested in? ', 'What currency are you interested in? ');
+        this.emit(':elicitSlot', 'Currency', 'What currency are you interested in? ', 'What currency are you interested in? ', this.event.request.intent );
+        //this.handler.directives="Dialog.Delegate" ;
+        //this.emit(":delegate");
     },
 
     'FAQIntent': function () {

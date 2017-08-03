@@ -7,22 +7,23 @@ const goodbyeResponse = 'Thank for using B. M. O. Next, Goodbye!';
 
 module.exports.fxRateHandlers = Alexa.CreateStateHandler(states.FXMODE, {
     "FXRateIntent": function () {
+         //console.log(JSON.stringify(this.event, null, 4));
           var intentObj = this.event.request.intent;
-          if(!intentObj.slots.Currency){
+          if(!intentObj.slots.Currency.value){
                 var slotToElicit = 'Currency';
                 var speechOutput = 'What currency are you interested in?';
                 var repromptSpeech = speechOutput;
-                this.emit(':elicitSlot', slotToElicit, speechOutput, repromptSpeech);
-          }else if(!intentObj.slots.BuyOrSell){
+                this.emit(':elicitSlot', slotToElicit, speechOutput, repromptSpeech, intentObj);
+          }else if(!intentObj.slots.BuyOrSell.value){
                 var slotToElicit = 'BuyOrSell';
                 var speechOutput = 'Do you want to buy or sell?';
                 var repromptSpeech = speechOutput;
-                this.emit(':elicitSlot', slotToElicit, speechOutput, repromptSpeech);
-          }else if(!intentObj.slots.Amount){
+                this.emit(':elicitSlot', slotToElicit, speechOutput, repromptSpeech, intentObj);
+          }else if(!intentObj.slots.Amount.value){
                 var slotToElicit = 'Amount';
                 var speechOutput = 'How much do you like to exchange?';
                 var repromptSpeech = speechOutput;
-                this.emit(':elicitSlot', slotToElicit, speechOutput, repromptSpeech);
+                this.emit(':elicitSlot', slotToElicit, speechOutput, repromptSpeech,intentObj);
           }else {
                 var currency = intentObj.slots.Currency.value;
                 var buyOrSell = intentObj.slots.BuyOrSell.value;
@@ -30,7 +31,7 @@ module.exports.fxRateHandlers = Alexa.CreateStateHandler(states.FXMODE, {
 
                   var fxRatesObj = '';
 
-                    if(!this.attributes['fxrates']) {
+                    if(!this.attributes.fxrates) {
                         var endpoint = "http://ec2-54-219-137-161.us-west-1.compute.amazonaws.com/fxrates";
                         var body = "";
                         console.log('request sending to ' + endpoint);
@@ -42,7 +43,7 @@ module.exports.fxRateHandlers = Alexa.CreateStateHandler(states.FXMODE, {
                             response.on('end', () => {
                                 console.log("response is " + body);
                                 fxRatesObj = JSON.parse(body);
-                                this.attributes['fxrates'] = JSON.stringify(fxRatesObj);
+                                this.attributes.fxrates = JSON.stringify(fxRatesObj);
                                 var speechOutput = calculate(currency, buyOrSell, amount, fxRatesObj);
                                 this.emit(':tell',speechOutput);
                             });
@@ -51,7 +52,7 @@ module.exports.fxRateHandlers = Alexa.CreateStateHandler(states.FXMODE, {
                             return "Foreign Exchange rate is not available right now. Please try again later";
                         });
                     }else{
-                        fxRatesObj = JSON.parse(this.attributes['fxrates']);
+                        fxRatesObj = JSON.parse(this.attributes.fxrates);
                         var speechOutput = calculate(currency, buyOrSell, amount, fxRatesObj);
                         this.emit(':tell',speechOutput);
                     }
@@ -85,10 +86,10 @@ function calculate(currency, action, amount, rates){
     //first check if the currency is valid
     for(i=0;i<rates.length;i++){
        console.log(rates[i].countryName.toLowerCase() + "-" + currency);
-        if(rates[i].countryName.toLowerCase() === currency||
-           rates[i].currencyName.toLowerCase() === currency||
-           rates[i].currencySymbol.toLowerCase() === currency){
-             if(action ==="buy"){
+        if(rates[i].countryName.toLowerCase() === currency.toLowerCase()||
+           rates[i].currencyName.toLowerCase() === currency.toLowerCase()||
+           rates[i].currencySymbol.toLowerCase() === currency.toLowerCase()){
+             if(action.toLowerCase() ==="buy"){
                  rate = parseFloat(rates[i].buyRate);
                  total = (amount * rate).toFixed(2);
                  outputResponse = "The buy rate for "+ currency + " is "+ rates[i].buyRate + ". We buy " + amount + " "+ currency +" for " + total + " Canadian Dollars. ";
