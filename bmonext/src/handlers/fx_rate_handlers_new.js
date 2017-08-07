@@ -91,7 +91,7 @@ function delegateSlotCollection(obj) {
     console.log("in delegateSlotCollection");
     console.log("current dialogState: " + obj.event.request.dialogState);
     if (obj.event.request.dialogState !== "COMPLETED") {
-        console.log("in not completed");
+        console.log("incompleted");
         obj.emit(":delegate", obj.event.request.intent);
     } else {
         console.log("in completed");

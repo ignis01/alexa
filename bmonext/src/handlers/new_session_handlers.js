@@ -7,7 +7,8 @@ var states = require('../state').states;
 module.exports.newSessionHandlers = {
     'LaunchRequest': function() {
         this.handler.state = states.STARTMODE;
-        this.emit(':ask', "Welcome to BMO Next");
+        this.emit(':askWithCard', "Welcome to BMO Next, how can I help you?", "Are you there? What can I do for you? ", "Welcome", "Welcome to BMO Next, you can " +
+            "say 'Exchange rate' for Foreign Exchange Information, say 'find me a branch' to locate a branch or ATM close by",null );
     },
 
     'AMAZON.HelpIntent': function() {
