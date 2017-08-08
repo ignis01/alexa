@@ -1,14 +1,14 @@
 var Alexa = require("alexa-sdk");
 var states = require('../state').states;
+var fxRateHandler = require('../handlers/fx_rate_handlers');
+const goodbyeResponse = 'Thank for using B. M. O. next, Goodbye!';
 
 module.exports.startMenuHandlers = Alexa.CreateStateHandler(states.STARTMODE, {
-    'FXRateIntent': function () {
+     'FXRateIntent': function () {
         "use strict";
         this.handler.state = states.FXMODE;
-        this.emit(':elicitSlot', 'Currency', 'What currency are you interested in? ', 'What currency are you interested in? ', this.event.request.intent );
-        //this.handler.directives="Dialog.Delegate" ;
-        //this.emit(":delegate");
-    },
+        fxRateHandler.fxRateHandlers.FXRateIntent.apply(this);
+     },
 
     'FAQIntent': function () {
         "use strict";

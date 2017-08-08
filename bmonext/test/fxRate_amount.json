@@ -20,7 +20,7 @@
       "slots": {
         "Currency": {
           "name": "Currency",
-          "value": "US dollar"
+          "value": "Euro"
         },
         "BuyOrSell": {
           "name": "BuyOrSell",

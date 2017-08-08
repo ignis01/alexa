@@ -1,9 +1,11 @@
 var Alexa = require("alexa-sdk");
 var http = require('http');
 var https = require('https');
+var startHandler = require('../handlers/start_menu_handlers');
 
 var states = require('../state').states;
 const goodbyeResponse = 'Thank for using B. M. O. Next, Goodbye!';
+const tryAnotherResponse = "What else can I help you with?" ;
 
 module.exports.fxRateHandlers = Alexa.CreateStateHandler(states.FXMODE, {
     "FXRateIntent": function () {
@@ -44,23 +46,34 @@ module.exports.fxRateHandlers = Alexa.CreateStateHandler(states.FXMODE, {
                                 console.log("response is " + body);
                                 fxRatesObj = JSON.parse(body);
                                 this.attributes.fxrates = JSON.stringify(fxRatesObj);
-                                var speechOutput = calculate(currency, buyOrSell, amount, fxRatesObj);
-                                this.emit(':tell',speechOutput);
+                                var reprompt =  tryAnotherResponse;
+                                var speechOutput = calculate(currency, buyOrSell, amount, fxRatesObj) + reprompt;
+                               //this.handler.state= states.STARTMODE;
+                                this.emit(':ask',speechOutput,reprompt);
                             });
                         }).on('error', function (e) {
                             console.log('Data retrieval error ' + e.message);
-                            return "Foreign Exchange rate is not available right now. Please try again later";
+                            return "Foreign Exchange rate is not available right now. "+ tryAnotherResponse;
                         });
                     }else{
                         fxRatesObj = JSON.parse(this.attributes.fxrates);
-                        var speechOutput = calculate(currency, buyOrSell, amount, fxRatesObj);
-                        this.emit(':tell',speechOutput);
+                        var reprompt =  " What else can I help you with?"
+                        var speechOutput = calculate(currency, buyOrSell, amount, fxRatesObj) + reprompt;
+                        //this.handler.state = states.STARTMODE;
+                        this.emit(':ask',speechOutput, reprompt);
                     }
-
-
-
-          }
+         }
     },
+
+   /* "AMAZON.YesIntent":function () {
+        console.log("enter yes intent");
+        this.emit(':elicitSlot', 'Currency', 'What currency are you interested in? ', 'What currency are you interested in? ', "FxRateIntent" );
+    },
+
+    "AMAZON.YesIntent":function () {
+        this.handler.state = states.STARTMODE;
+        this.emit(':ask','Ok, what else can I help you with?');
+    },*/
 
     "AMAZON.StopIntent": function() {
           this.emit(':tell', goodbyeResponse);
@@ -84,26 +97,28 @@ module.exports.fxRateHandlers = Alexa.CreateStateHandler(states.FXMODE, {
 function calculate(currency, action, amount, rates){
     var outputResponse = "The " + currency + " exchange rate is not available.";
     //first check if the currency is valid
-    for(i=0;i<rates.length;i++){
-       console.log(rates[i].countryName.toLowerCase() + "-" + currency);
-        if(rates[i].countryName.toLowerCase() === currency.toLowerCase()||
-           rates[i].currencyName.toLowerCase() === currency.toLowerCase()||
-           rates[i].currencySymbol.toLowerCase() === currency.toLowerCase()){
-             if(action.toLowerCase() ==="buy"){
-                 rate = parseFloat(rates[i].buyRate);
-                 total = (amount * rate).toFixed(2);
-                 outputResponse = "The buy rate for "+ currency + " is "+ rates[i].buyRate + ". We buy " + amount + " "+ currency +" for " + total + " Canadian Dollars. ";
-                 console.log(outputResponse);
-                 return outputResponse;
-             }else{
-                 rate = parseFloat(rates[i].sellRate);
-                 total = (amount * rate).toFixed(2);
-                 outputResponse = "The sell rate for "+ currency + " is "+ rates[i].sellRate + ". We sell " + amount + " "+ currency +" for " + total + " Canadian Dollars. ";
-                 console.log(outputResponse);
-                 return outputResponse;
-             }
-        break;
+    for(i=0;i<rates.length;i++) {
+        console.log(rates[i].countryName.toLowerCase() + "-" + currency);
+        if (rates[i].countryName.toLowerCase() === currency.toLowerCase() ||
+            rates[i].currencyName.toLowerCase() === currency.toLowerCase() ||
+            rates[i].currencySymbol.toLowerCase() === currency.toLowerCase()) {
+            if (action.toLowerCase() === "buy") {
+                rate = parseFloat(rates[i].buyRate);
+                total = (amount * rate).toFixed(2);
+                outputResponse = "The buy rate for " + currency + " is " + rates[i].buyRate + ". We buy " + amount + " " + currency + " for " + total + " Canadian Dollars. ";
+                console.log(outputResponse);
+                return outputResponse;
+            } else {
+                rate = parseFloat(rates[i].sellRate);
+                total = (amount * rate).toFixed(2);
+                outputResponse = "The sell rate for " + currency + " is " + rates[i].sellRate + ". We sell " + amount + " " + currency + " for " + total + " Canadian Dollars. ";
+                console.log(outputResponse);
+                return outputResponse;
+            }
+            break;
+        }
     }
     return outputResponse;
-  }
 }
+
+module.exports.calculate = calculate;

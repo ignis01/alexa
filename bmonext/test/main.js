@@ -70,7 +70,7 @@ sts.assumeRole({
         };
 
         var lambda = require('../src/index.js');
-        var event = require('./launchRequest.json');
+        var event = require('./YesFxRate.json');
         lambda.handler(event, context());
     }
 });
