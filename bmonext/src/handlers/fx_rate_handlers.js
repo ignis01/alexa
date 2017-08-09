@@ -48,7 +48,7 @@ module.exports.fxRateHandlers = Alexa.CreateStateHandler(states.FXMODE, {
                                 this.attributes.fxrates = JSON.stringify(fxRatesObj);
                                 var reprompt =  tryAnotherResponse;
                                 var speechOutput = calculate(currency, buyOrSell, amount, fxRatesObj) + reprompt;
-                               //this.handler.state= states.STARTMODE;
+                                this.handler.state= states.STARTMODE;
                                 this.emit(':ask',speechOutput,reprompt);
                             });
                         }).on('error', function (e) {
@@ -59,7 +59,7 @@ module.exports.fxRateHandlers = Alexa.CreateStateHandler(states.FXMODE, {
                         fxRatesObj = JSON.parse(this.attributes.fxrates);
                         var reprompt =  " What else can I help you with?"
                         var speechOutput = calculate(currency, buyOrSell, amount, fxRatesObj) + reprompt;
-                        //this.handler.state = states.STARTMODE;
+                        this.handler.state = states.STARTMODE;
                         this.emit(':ask',speechOutput, reprompt);
                     }
          }
@@ -105,13 +105,13 @@ function calculate(currency, action, amount, rates){
             if (action.toLowerCase() === "buy") {
                 rate = parseFloat(rates[i].buyRate);
                 total = (amount * rate).toFixed(2);
-                outputResponse = "The buy rate for " + currency + " is " + rates[i].buyRate + ". We buy " + amount + " " + currency + " for " + total + " Canadian Dollars. ";
+                outputResponse = "The buy rate for " + rates[i].currencyName.toLowerCase()+ " is " + rates[i].buyRate + ". We buy " + amount + " " + rates[i].currencyName.toLowerCase() + " for " + total + " Canadian Dollars. ";
                 console.log(outputResponse);
                 return outputResponse;
             } else {
                 rate = parseFloat(rates[i].sellRate);
                 total = (amount * rate).toFixed(2);
-                outputResponse = "The sell rate for " + currency + " is " + rates[i].sellRate + ". We sell " + amount + " " + currency + " for " + total + " Canadian Dollars. ";
+                outputResponse = "The sell rate for " + rates[i].currencyName.toLowerCase() + " is " + rates[i].sellRate + ". We sell " + amount + " " + rates[i].currencyName.toLowerCase() + " for " + total + " Canadian Dollars. ";
                 console.log(outputResponse);
                 return outputResponse;
             }

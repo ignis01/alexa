@@ -1,0 +1,11 @@
+[
+  {"category":"Bank Account",
+   "question":"How long do I have to pay off an overdraft balance?",
+   "answer":"overdraft protection is a revolving credit available to be used solely to cover overdrafts on your account. it is not meant to be used as a long term credit facility. you need to make monthly deposits to your account and should not remain overdrawn for more than 90 consecutive days."
+  },
+  {"category":"Bank Account",
+    "question":"What type of accounts does BMO offer?",
+    "answer":"Personal AccountsWe offer different types of bank accounts &ndash; Primary Chequing, Premium Rate Savings, Smart Saver, US Dollars, Tax Free Savings etc For full details on all of our accounts, visit the Choose an Account page. Small Business AccountsPlease visit our Accounts & Plans page for full details on the type of accounts we offer. You can also visit your nearest BMO Bank of Montreal branch or contact us. To book an appointment at your local branch, return to Online Banking and select the Book or Manage Appointments link in the Questions box in the bottom left of your screen."
+  }
+  ...
+]

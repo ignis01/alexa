@@ -3,9 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/bmonext.iml" filepath="$PROJECT_DIR$/bmonext.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../demo/demo.iml" filepath="$PROJECT_DIR$/../demo/demo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../fxrate/fxrate.iml" filepath="$PROJECT_DIR$/../fxrate/fxrate.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../alexaLocalEnvironmentDemo/skill-sample-nodejs-highlowgame-master/skill-sample-nodejs-highlowgame-master.iml" filepath="$PROJECT_DIR$/../../alexaLocalEnvironmentDemo/skill-sample-nodejs-highlowgame-master/skill-sample-nodejs-highlowgame-master.iml" />
     </modules>
   </component>
 </project>
