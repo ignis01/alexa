@@ -1,0 +1,184 @@
+{
+  "intents": [
+    {
+      "name": "AMAZON.CancelIntent",
+      "samples": []
+    },
+    {
+      "name": "AMAZON.HelpIntent",
+      "samples": []
+    },
+    {
+      "name": "AMAZON.StopIntent",
+      "samples": []
+    },
+    {
+      "name": "FXRateIntent",
+      "samples": [
+        "currency exchange",
+        "foreign exchange",
+        "exchange rate",
+        "F.X. rate",
+        "I would like to {BuyOrSell} {Amount} {Currency}",
+        "I would like to {BuyOrSell} {Currency}",
+        "I want to exchange {Amount} {Currency}",
+        "Start Over"
+      ],
+      "slots": [
+        {
+          "name": "Currency",
+          "type": "CurrencyType",
+          "samples": [
+            "I am interested in {Currency}",
+            "{Currency}"
+          ]
+        },
+        {
+          "name": "BuyOrSell",
+          "type": "BuyOrSellType",
+          "samples": [
+            "I want to {BuyOrSell}",
+            "{BuyOrSell}"
+          ]
+        },
+        {
+          "name": "Amount",
+          "type": "AMAZON.NUMBER",
+          "samples": [
+            "{Amount}",
+            "I want to exchange {Amount}"
+          ]
+        }
+      ]
+    }
+  ],
+  "types": [
+    {
+      "name": "BuyOrSellType",
+      "values": [
+        {
+          "id": null,
+          "name": {
+            "value": "Buy",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "Sell",
+            "synonyms": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "CurrencyType",
+      "values": [
+        {
+          "id": null,
+          "name": {
+            "value": "US Dollar",
+            "synonyms": [
+              "U. S. D.",
+              "American Dollar"
+            ]
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "Euro",
+            "synonyms": [
+              "France",
+              "Germany"
+            ]
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "Japanese Yen",
+            "synonyms": [
+              "Yen"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "prompts": [
+    {
+      "id": "Elicit.Intent-FXRateIntent.IntentSlot-Currency",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "Which country's currency are you interested in"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-FXRateIntent.IntentSlot-BuyOrSell",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "Do you want to buy or sell?"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-FXRateIntent.IntentSlot-Amount",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "How much do you want to exchange?"
+        }
+      ]
+    }
+  ],
+  "dialog": {
+    "version": "1.0",
+    "intents": [
+      {
+        "name": "FXRateIntent",
+        "confirmationRequired": false,
+        "prompts": {},
+        "slots": [
+          {
+            "name": "Currency",
+            "type": "CurrencyType",
+            "elicitationRequired": true,
+            "confirmationRequired": false,
+            "prompts": {
+              "elicit": "Elicit.Intent-FXRateIntent.IntentSlot-Currency"
+            }
+          },
+          {
+            "name": "BuyOrSell",
+            "type": "BuyOrSellType",
+            "elicitationRequired": true,
+            "confirmationRequired": false,
+            "prompts": {
+              "elicit": "Elicit.Intent-FXRateIntent.IntentSlot-BuyOrSell"
+            }
+          },
+          {
+            "name": "Amount",
+            "type": "AMAZON.NUMBER",
+            "elicitationRequired": true,
+            "confirmationRequired": false,
+            "prompts": {
+              "elicit": "Elicit.Intent-FXRateIntent.IntentSlot-Amount"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

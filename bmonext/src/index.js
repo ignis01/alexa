@@ -1,13 +1,13 @@
 'use strict';
 var Alexa = require("alexa-sdk");
-var appId = 'amzn1.ask.skill.513d467a-513b-4465-a555-4bbc63c23b92';
+var appId = 'amzn1.ask.skill.5dff728e-c7ee-42d3-a506-2554a189f306';
 
 var newSessionHandlers = require('./handlers/new_session_handlers.js').newSessionHandlers;
 var faqHandlers = require('./handlers/faq_handlers.js').faqHandlers;
 var fxRateHandlers = require('./handlers/fx_rate_handlers.js').fxRateHandlers;
-var bankAccountInfoHandlers = require('./handlers/bank_account_handlers.js').bankAcountInfoHandlers;
-var creditCardInfoHandlers = require('./handlers/credit_card_handlers.js').creditCardInfoHandlers;
-var branchLocationHandlers = require('./handlers/branch_location_handlers.js').branchLocationHandlers;
+var bankAccountInfoHandlers = require('./handlers/bank_account_handlers.js').accountHandlers;
+var creditCardInfoHandlers = require('./handlers/credit_card_handlers.js').creditCardHandlers;
+var branchLocationHandlers = require('./handlers/branch_location_handlers.js').branchHandlers;
 var startMenuHandlers = require('./handlers/start_menu_handlers.js').startMenuHandlers;
 
 exports.handler = function(event, context, callback) {
