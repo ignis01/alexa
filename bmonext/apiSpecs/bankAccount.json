@@ -1,0 +1,39 @@
+[
+	{
+	 "accountName":"Practical",
+	 "accountType":"Chequing",
+	 "accountOffer":"",
+	 "accountDescription":"A low-cost option for limited banking needs",
+	 "monthlyFee":"4.00",
+	 "monthlySavingRequirement":"0.00",
+	 "minWaiverBalance":"2000.00",
+	 "transactionPerMonth":12,
+	 "etransferPerMonth":-1,
+	 "interestRate":"0.00"
+	},
+	{
+	 "accountName":"Plus",
+	 "accountType":"Checking",
+	 "accountOffer":"$100 Cash Bonus",
+	 "accountDescription":"Great value for moderate banking needs",
+	 "monthlyFee":"10.95",
+	 "monthlySavingRequirement":"0.00",
+	 "minWaiverBalance":"3000.00",
+	 "transactionPerMonth":30,
+	 "etransferPerMonth":-1,
+	 "interestRate":"0.00"
+	},
+	{
+	 "accountName":"Smart Saver",
+	 "accountType":"Saving",
+	 "accountOffer":"",
+	 "accountDescription":"Enjoy a high interest rate regardless of balance",
+	 "monthlyFee":"0.00",
+	 "monthlySavingRequirement":"0.00",
+	 "minWaiverBalance":"0.00",
+	 "transactionPerMonth":-1,
+	 "etransferPerMonth":-1,
+	 "interestRate":"0.40"
+	}
+
+]

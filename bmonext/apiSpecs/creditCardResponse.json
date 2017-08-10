@@ -1,0 +1,27 @@
+[
+	{
+	 "cardName":"BMO CashBack Mastercard",
+	 "cardType":"CashBack",
+	 "cardOffer":"Get up to 4% cash back on every credit card purchase in your first 4 months.",
+	 "cardReward":"get 1% cash back on all credit card purchases!",
+	 "cardBenefit":"up to 25% off rentals at participating National Car Rental and Alamo Rent A Car locations. Even more cash back by adding additional cardholders for free. Purchase protection and extended warranty on most items bought with your card"
+	 "annualFee":"0.00",
+	 "purchaseRate":"19.99",
+	 "casheAdvanceRate":"22.99",
+	 "incomeRestrictionIndividual":"",
+	 "incomeRestrictionHousehild":""
+	},
+	{
+	 "cardName":"BMO World Elite Mastercard",
+	 "cardType":"Reward",
+	 "cardOffer":"Get the $150 annual fee waived in the first year and get $200 in travel rewards – a $350 value.",
+	 "cardReward":"Get 2 BMO Rewards points for every $1 in credit card purchases – that's 2% back in travel rewards.",
+	 "cardBenefit":"4 complimentary airport lounge visits per year (over a US$200/year value). BMO World Elite Total Travel and Medical Protection providing car rental collision damage coverage, out-of-province / out-of-country   emergency medical protection up to $2 million, and more for unlimited-trips-per-year up to 21 days in length. See Add-ons for option products. BMO Rewards points faster when you add additional cardholders for $50/year each8"
+	 "annualFee":"150.00",
+	 "purchaseRate":"19.99",
+	 "casheAdvanceRate":"22.99",
+	 "incomeRestrictionIndividual":"80000",
+	 "incomeRestrictionHousehild":"150000"
+	}
+
+]

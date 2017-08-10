@@ -1,0 +1,175 @@
+[ {
+  "countryName" : "United States",
+  "currencyName" : "US dollar",
+  "currencySymbol" : "USD",
+  "buyRate" : 1.2484,
+  "sellRate" : 1.3343
+}, {
+  "countryName" : "European Union",
+  "currencyName" : "Euro",
+  "currencySymbol" : "EUR",
+  "buyRate" : 1.4218,
+  "sellRate" : 1.5452
+}, {
+  "countryName" : "United Kingdom",
+  "currencyName" : "Pound Sterling",
+  "currencySymbol" : "GBP",
+  "buyRate" : 1.6078,
+  "sellRate" : 1.719
+}, {
+  "countryName" : "Australia",
+  "currencyName" : "Australian Dollar",
+  "currencySymbol" : "AUD",
+  "buyRate" : 0.9448,
+  "sellRate" : 1.0328
+}, {
+  "countryName" : "Austria",
+  "currencyName" : "Euro",
+  "currencySymbol" : "EUR",
+  "buyRate" : 1.4218,
+  "sellRate" : 1.5452
+}, {
+  "countryName" : "Belgium",
+  "currencyName" : "Euro",
+  "currencySymbol" : "EUR",
+  "buyRate" : 1.4218,
+  "sellRate" : 1.5452
+}, {
+  "countryName" : "Denmark",
+  "currencyName" : "Danish Krone",
+  "currencySymbol" : "DKK",
+  "buyRate" : 0.1929,
+  "sellRate" : 0.2073
+}, {
+  "countryName" : "Fiji",
+  "currencyName" : "Fiji Dollar",
+  "currencySymbol" : "FJD",
+  "buyRate" : 0.5499,
+  "sellRate" : 0.7169
+}, {
+  "countryName" : "Finland",
+  "currencyName" : "Euro",
+  "currencySymbol" : "EUR",
+  "buyRate" : 1.4218,
+  "sellRate" : 1.5452
+}, {
+  "countryName" : "France",
+  "currencyName" : "Euro",
+  "currencySymbol" : "EUR",
+  "buyRate" : 1.4218,
+  "sellRate" : 1.5452
+}, {
+  "countryName" : "Germany",
+  "currencyName" : "Euro",
+  "currencySymbol" : "EUR",
+  "buyRate" : 1.4218,
+  "sellRate" : 1.5452
+}, {
+  "countryName" : "Greece",
+  "currencyName" : "Euro",
+  "currencySymbol" : "EUR",
+  "buyRate" : 1.4218,
+  "sellRate" : 1.5452
+}, {
+  "countryName" : "Greenland",
+  "currencyName" : "Danish Krone",
+  "currencySymbol" : "DKK",
+  "buyRate" : 0.1929,
+  "sellRate" : 0.2073
+}, {
+  "countryName" : "Hong Kong",
+  "currencyName" : "Hong Kong Dollar",
+  "currencySymbol" : "HKD",
+  "buyRate" : 0.1564,
+  "sellRate" : 0.1752
+}, {
+  "countryName" : "Ireland",
+  "currencyName" : "Euro",
+  "currencySymbol" : "EUR",
+  "buyRate" : 1.4218,
+  "sellRate" : 1.5452
+}, {
+  "countryName" : "Italy",
+  "currencyName" : "Euro",
+  "currencySymbol" : "EUR",
+  "buyRate" : 1.4218,
+  "sellRate" : 1.5452
+}, {
+  "countryName" : "Japan",
+  "currencyName" : "Yen",
+  "currencySymbol" : "JPY",
+  "buyRate" : 0.011012,
+  "sellRate" : 0.011813
+}, {
+  "countryName" : "Liechtensterin",
+  "currencyName" : "Swiss Franc",
+  "currencySymbol" : "CHF",
+  "buyRate" : 1.307,
+  "sellRate" : 1.3799
+}, {
+  "countryName" : "Luxembourg",
+  "currencyName" : "Euro",
+  "currencySymbol" : "EUR",
+  "buyRate" : 1.4218,
+  "sellRate" : 1.5452
+}, {
+  "countryName" : "Mexico",
+  "currencyName" : "Mexican Peso",
+  "currencySymbol" : "MXN",
+  "buyRate" : 0.06617,
+  "sellRate" : 0.07886
+}, {
+  "countryName" : "Netherlands",
+  "currencyName" : "Euro",
+  "currencySymbol" : "EUR",
+  "buyRate" : 1.4218,
+  "sellRate" : 1.5452
+}, {
+  "countryName" : "New Zealand",
+  "currencyName" : "New Zealand Dollar",
+  "currencySymbol" : "NZD",
+  "buyRate" : 0.8921,
+  "sellRate" : 0.9813
+}, {
+  "countryName" : "Norway",
+  "currencyName" : "Norwegian Krone",
+  "currencySymbol" : "NOK",
+  "buyRate" : 0.1505,
+  "sellRate" : 0.163
+}, {
+  "countryName" : "Portugal",
+  "currencyName" : "Euro",
+  "currencySymbol" : "EUR",
+  "buyRate" : 1.4218,
+  "sellRate" : 1.5452
+}, {
+  "countryName" : "Singapore",
+  "currencyName" : "Singapore Dollar",
+  "currencySymbol" : "SGD",
+  "buyRate" : 0.9174,
+  "sellRate" : 0.9581
+}, {
+  "countryName" : "Slovenia",
+  "currencyName" : "Euro",
+  "currencySymbol" : "EUR",
+  "buyRate" : 1.4218,
+  "sellRate" : 1.5452
+}, {
+  "countryName" : "Spain",
+  "currencyName" : "Euro",
+  "currencySymbol" : "EUR",
+  "buyRate" : 1.4218,
+  "sellRate" : 1.5452
+}, {
+  "countryName" : "Sweden",
+  "currencyName" : "Swedish Krona",
+  "currencySymbol" : "SEK",
+  "buyRate" : 0.1483,
+  "sellRate" : 0.1604
+}, {
+  "countryName" : "Switzerland",
+  "currencyName" : "Swiss Franc",
+  "currencySymbol" : "CHF",
+  "buyRate" : 1.307,
+  "sellRate" : 1.3799
+} ]

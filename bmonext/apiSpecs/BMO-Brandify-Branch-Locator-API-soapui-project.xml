@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="b4a179fd-7948-462f-8508-79f0876c8a9d" activeEnvironment="Default" name="BMO Brandify Branch Locator API" resourceRoot="" soapui-version="5.3.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:RestService" id="dc7a2323-6a89-4220-ae9e-09ea387ea436" wadlVersion="http://wadl.dev.java.net/2009/02" name="https://branchlocator.bmo.com" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>https://branchlocator.bmo.com</con:endpoint></con:endpoints><con:resource name="Locatorsearch" path="/rest/locatorsearch" id="ff47ed36-8512-4092-b5bd-c0f35e8f7e51"><con:settings/><con:parameters/><con:method name="Locatorsearch 1" id="2fedee36-ed39-4a90-a087-470b8de3d123" method="POST"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>text/json;charset=UTF-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:loc="https://branchlocator.bmo.com/rest/locatorsearch">loc:Response</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:request name="Request 1" id="0ad8bacc-b68b-4896-be17-0ae5a32762d7" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://branchlocator.bmo.com</con:endpoint><con:request>{
+	"request": {
+		"appkey": "343095D0-C235-11E6-93AB-1BF70C70A832",
+		"formdata": {
+			"gps": "first",
+			"dataview": "store_default",
+			"limit": 25,
+			"google_autocomplete": "true",
+			"geolocs": {
+				"geoloc": [{
+						"addressline": "L3P7X2",
+						"country": "CA",
+						"latitude": "",
+						"longitude": "",
+						"state": "",
+						"province": "ON",
+						"city": "",
+						"address1": "",
+						"postalcode": ""
+					}
+				]
+			},
+			"searchradius": "15|25|50|100|250",
+			"softmatch": "1",
+			"where": {
+				"and": {
+					"wheelchair": {
+						"eq": ""
+					},
+					"safedepositsmall": {
+						"eq": ""
+					},
+					"transit": {
+						"eq": ""
+					},
+					"languages": {
+						"ilike": ""
+					},
+					"saturdayopen": {
+						"ne": ""
+					},
+					"sundayopen": {
+						"ne": ""
+					},
+					"abmsaturdayopen": {
+						"ne": ""
+					},
+					"abmsundayopen": {
+						"ne": ""
+					},
+					"grouptype": {
+						"eq": "BMOBranches"
+					}
+				}
+			}
+		}
+	}
+}
+</con:request><con:originalUri>https://branchlocator.bmo.com/rest/locatorsearch</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:request><con:request name="reversegeocoder" id="97233fc3-08cc-4fcb-aae9-9ddcbb10d193" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://branchlocator.bmo.com</con:endpoint><con:request>{
+	"request": {
+		"appkey": "343095D0-C235-11E6-93AB-1BF70C70A832",
+		"formdata": {
+			"gps": "first",
+			"dataview": "store_default",
+			"limit": 25,
+			"google_autocomplete": "true",
+			"geolocs": {
+				"geoloc": [{
+						"addressline": "",
+						"country": "CA",
+						"latitude": "43.671287",
+						"longitude": "-79.3860764",
+						"state": "",
+						"province": "",
+						"city": "",
+						"address1": "",
+						"postalcode": ""
+					}
+				]
+			},
+			"searchradius": "15|25|50|100|250",
+			"softmatch": "1",
+			"where": {
+				"and": {
+					"wheelchair": {
+						"eq": ""
+					},
+					"safedepositsmall": {
+						"eq": ""
+					},
+					"transit": {
+						"eq": ""
+					},
+					"languages": {
+						"ilike": ""
+					},
+					"saturdayopen": {
+						"ne": ""
+					},
+					"sundayopen": {
+						"ne": ""
+					},
+					"abmsaturdayopen": {
+						"ne": ""
+					},
+					"abmsundayopen": {
+						"ne": ""
+					},
+					"grouptype": {
+						"eq": "BMOBranches"
+					}
+				}
+			}
+		}
+	}
+}
+</con:request><con:originalUri>https://branchlocator.bmo.com/rest/locatorsearch</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
