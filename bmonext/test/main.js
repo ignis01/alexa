@@ -16,7 +16,7 @@
 // "lambda.amazonaws.com" and "arn:aws:iam::<YOUR ACCOUNT ID>:user/<YOUR USER>"
 
 //var roleArn = 'arn:aws:iam::<YOUR AWS ACCOUNT ID>:role/lambda_dynamo';
-var roleArn = 'arn:aws:iam::022751319747:role/AlexaLambaExcuteRole';
+var roleArn = 'arn:aws:iam::046177162984:role/lambda_basic_execution';
 var region = 'us-east-1';
 /* DO NOT MAKE CHANGE BELOW THIS */
 var aws = require('aws-sdk');
