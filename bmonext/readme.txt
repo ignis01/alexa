@@ -20,8 +20,8 @@ to use existing user "alexa", run step 8.9 only)
     8.9: configure AWS use newly created AccessID and Secret Access Key
         open terminal window
         >aws configure
-        AWS Access Key ID [****************6XNQ]: AKIAJ2EQL6YFLDEBFKVA
-        AWS Secret Access Key [****************+LXp]: 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
+        AWS Access Key ID [****************6XNQ]: {copy & paste access-key from the csv file here}
+        AWS Secret Access Key [****************+LXp]: {{copy & paste secret-key from the csv file here}
         Default region name [us-east-1]:
         Default output format [json]:
 
